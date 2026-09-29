@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <!-- ========================================================= -->
+    <!-- LISTA DE PIEZAS -->
+    <!-- ========================================================= -->
+
+    <record id="view_pvent_product_template_tree" model="ir.ui.view">
+        <field name="name">pvent.product.template.tree</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+
+            <list string="Inventario de piezas">
+
+                <field name="pvent_internal_code"/>
+                <field name="name"/>
+                <field name="pvent_part_number"/>
+                <field name="pvent_quantity"/>
+                <field name="pvent_unit"/>
+                <field name="pvent_location"/>
+                <field name="pvent_status"/>
+                <field name="pvent_project_id"/>
+                <field name="pvent_responsible_id"/>
+
+            </list>
+
+        </field>
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- FORMULARIO DE PIEZA -->
+    <!-- ========================================================= -->
+
+    <record id="view_pvent_product_template_form" model="ir.ui.view">
+        <field name="name">pvent.product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+
+        <field name="arch" type="xml">
+
+            <!-- Información Pvent -->
+            <xpath expr="//notebook" position="inside">
+
+                <page string="Pvent">
+
+                    <group>
+
+                        <group string="Identificación">
+
+                            <field name="pvent_internal_code"
+                                   readonly="1"/>
+
+                            <field name="pvent_part_number"/>
+
+                            <field name="pvent_short_name"/>
+
+                            <field name="pvent_unit"/>
+
+                            <field name="pvent_review_status"/>
+
+                        </group>
+
+
+                        <group string="Inventario">
+
+                            <field name="pvent_quantity"/>
+
+                            <field name="pvent_entry_date"/>
+
+                            <field name="pvent_location"/>
+
+                            <field name="pvent_workshop"/>
+
+                            <field name="pvent_status"/>
+
+                        </group>
+
+                    </group>
+
+
+                    <group string="Trazabilidad">
+
+                        <group>
+
+                            <field name="pvent_project_id"/>
+
+                            <field name="pvent_responsible_id"/>
+
+                        </group>
+
+                    </group>
+
+
+                    <group string="Información administrativa">
+
+                        <field name="pvent_supplier"/>
+
+                        <field name="pvent_purchase_url"
+                               widget="url"/>
+
+                        <field name="pvent_unit_price"/>
+
+                        <field name="pvent_customer_cost"/>
+
+                    </group>
+
+
+                    <group string="Observaciones">
+
+                        <field name="pvent_description"/>
+
+                        <field name="pvent_observations"/>
+
+                        <field name="pvent_admin_notes"/>
+
+                    </group>
+
+                </page>
+
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- ACCIÓN STOCK UNIVERSAL -->
+    <!-- ========================================================= -->
+
+    <record id="action_pvent_stock_universal" model="ir.actions.act_window">
+
+        <field name="name">Stock universal</field>
+
+        <field name="res_model">product.template</field>
+
+        <field name="view_mode">list,form</field>
+
+        <field name="view_id"
+               ref="view_pvent_product_template_tree"/>
+
+    </record>
+
+</odoo>

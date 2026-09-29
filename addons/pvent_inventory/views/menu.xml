@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <!-- ========================================================= -->
+    <!-- MENÚ PRINCIPAL PVENT -->
+    <!-- ========================================================= -->
+
+    <menuitem
+        id="menu_pvent_inventory_root"
+        name="Pvent"
+        sequence="10"/>
+
+
+    <!-- ========================================================= -->
+    <!-- INVENTARIO PVENT -->
+    <!-- ========================================================= -->
+
+    <menuitem
+        id="menu_pvent_inventory"
+        name="Inventario"
+        parent="menu_pvent_inventory_root"
+        sequence="10"/>
+
+
+    <menuitem
+        id="menu_pvent_stock_universal"
+        name="Stock universal"
+        parent="menu_pvent_inventory"
+        action="action_pvent_stock_universal"
+        sequence="10"/>
+
+
+    <menuitem
+        id="menu_pvent_movements"
+        name="Movimientos"
+        parent="stock.menu_stock_warehouse_mgmt"
+        action="action_pvent_movements"
+        sequence="50"/>
+
+
+    <!-- ========================================================= -->
+    <!-- PROYECTOS -->
+    <!-- ========================================================= -->
+
+    <menuitem
+        id="menu_pvent_projects"
+        name="Proyectos"
+        parent="menu_pvent_inventory"
+        action="action_pvent_projects"
+        sequence="30"/>
+
+</odoo>

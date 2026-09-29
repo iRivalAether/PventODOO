@@ -1,0 +1,5 @@
+id,name,model_id,group_id/id,operation,domain
+access_pvent_project_user,pvent.project.user,pvent.project,pvent_inventory.group_pvent_user,crud,
+access_pvent_project_admin,pvent.project.admin,pvent.project,pvent_inventory.group_pvent_admin,crud,
+access_pvent_movement_user,pvent.movement.user,pvent.movement,pvent_inventory.group_pvent_user,cru,
+access_pvent_movement_admin,pvent.movement.admin,pvent.movement,pvent_inventory.group_pvent_admin,crud,

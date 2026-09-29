@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_pvent_user" model="res.groups">
+        <field name="name">Pvent Inventario / Usuario</field>
+    </record>
+
+    <record id="group_pvent_admin" model="res.groups">
+        <field name="name">Pvent Inventario / Administrador</field>
+        <field name="implied_ids" eval="[(4, ref('pvent_inventory.group_pvent_user'))]"/>
+    </record>
+
+</odoo>

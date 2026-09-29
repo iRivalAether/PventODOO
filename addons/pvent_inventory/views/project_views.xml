@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <!-- ========================================================= -->
+    <!-- LISTA DE PROYECTOS -->
+    <!-- ========================================================= -->
+
+    <record id="view_pvent_project_tree" model="ir.ui.view">
+
+        <field name="name">pvent.project.tree</field>
+        <field name="model">pvent.project</field>
+
+        <field name="arch" type="xml">
+
+            <list string="Proyectos">
+
+                <field name="name"/>
+                <field name="owner"/>
+                <field name="description"/>
+
+            </list>
+
+        </field>
+
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- FORMULARIO DE PROYECTO -->
+    <!-- ========================================================= -->
+
+    <record id="view_pvent_project_form" model="ir.ui.view">
+
+        <field name="name">pvent.project.form</field>
+        <field name="model">pvent.project</field>
+
+        <field name="arch" type="xml">
+
+            <form string="Proyecto">
+
+                <sheet>
+
+                    <!-- CABECERA -->
+
+                    <group>
+
+                        <group>
+
+                            <field name="name"/>
+                            <field name="owner"/>
+
+                        </group>
+
+                        <field name="image"
+                               widget="image"
+                               class="oe_avatar"/>
+
+                    </group>
+
+
+                    <!-- INFORMACIÓN DEL PROYECTO -->
+
+                    <notebook>
+
+                        <page string="Información">
+
+                            <group>
+
+                                <field name="description"/>
+
+                                <field name="observations"/>
+
+                            </group>
+
+                        </page>
+
+
+                        <!-- PIEZAS ASOCIADAS -->
+
+                        <page string="Piezas">
+
+                            <field name="piece_ids">
+
+                                <list>
+
+                                    <field name="pvent_internal_code"/>
+                                    <field name="name"/>
+                                    <field name="pvent_quantity"/>
+                                    <field name="pvent_status"/>
+                                    <field name="pvent_location"/>
+
+                                </list>
+
+                            </field>
+
+                        </page>
+
+
+                        <!-- HISTORIAL DE MOVIMIENTOS -->
+
+                        <page string="Historial">
+
+                            <field name="movement_ids">
+
+                                <list>
+
+                                    <field name="movement_date"/>
+                                    <field name="product_id"/>
+                                    <field name="movement_type"/>
+                                    <field name="quantity"/>
+                                    <field name="state"/>
+                                    <field name="responsible_id"/>
+
+                                </list>
+
+                            </field>
+
+                        </page>
+
+                    </notebook>
+
+                </sheet>
+
+            </form>
+
+        </field>
+
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- ACCIÓN DE PROYECTOS -->
+    <!-- ========================================================= -->
+
+    <record id="action_pvent_projects"
+            model="ir.actions.act_window">
+
+        <field name="name">Proyectos</field>
+
+        <field name="res_model">pvent.project</field>
+
+        <field name="view_mode">list,form</field>
+
+    </record>
+
+</odoo>

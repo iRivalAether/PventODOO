@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="seq_pvent_item" model="ir.sequence">
+        <field name="name">Pvent Item</field>
+        <field name="code">pvent.inventory.item</field>
+        <field name="prefix">PVT-</field>
+        <field name="padding">6</field>
+    </record>
+
+    <record id="seq_pvent_movement" model="ir.sequence">
+        <field name="name">Pvent Movement</field>
+        <field name="code">pvent.inventory.movement</field>
+        <field name="prefix">MOV-</field>
+        <field name="padding">6</field>
+    </record>
+
+</odoo>
